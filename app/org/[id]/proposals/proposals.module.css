@@ -1,0 +1,83 @@
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: opacity var(--duration-fast);
+}
+
+.backBtn:hover {
+  opacity: 0.7;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  color: var(--text-tertiary);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  color: var(--text-secondary);
+  border-color: var(--border-medium);
+}
+
+.filterActive {
+  background: rgba(10, 132, 255, 0.15);
+  color: var(--accent-blue);
+  border-color: rgba(10, 132, 255, 0.3);
+}
+
+.filterCount {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+.filterActive .filterCount {
+  background: rgba(10, 132, 255, 0.2);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .headerRow {
+    flex-direction: column;
+  }
+}

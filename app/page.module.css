@@ -1,0 +1,327 @@
+.landing {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Local keyframes for CSS Modules scoping */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(10, 132, 255, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.2);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-blue);
+  margin-bottom: 24px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.heroBadgeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 7vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  animation: slideUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.heroGradient {
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-teal));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: clamp(16px, 2.5vw, 19px);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideUp 0.7s ease forwards;
+  opacity: 0;
+  animation-delay: 0.1s;
+}
+
+.heroCta {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: slideUp 0.8s ease forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+/* Floating Cards */
+.floatingElements {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatCard span {
+  font-size: 24px;
+}
+
+.floatCard strong {
+  display: block;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.floatCard small {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.float1 {
+  top: 20%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.float2 {
+  top: 30%;
+  right: 5%;
+  animation-delay: 2s;
+}
+
+.float3 {
+  bottom: 25%;
+  left: 8%;
+  animation-delay: 4s;
+}
+
+/* ========== FEATURES ========== */
+.features {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 48px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #FFFFFF, rgba(255,255,255,0.6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.featureCard {
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.featureIcon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.featureCard h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.featureCard p {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  line-height: 1.6;
+}
+
+/* ========== HOW IT WORKS ========== */
+.howItWorks {
+  padding: 80px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.stepNum {
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  margin: 0 auto 14px;
+}
+
+.step h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.stepArrow {
+  font-size: 24px;
+  color: var(--accent-blue);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 32px 24px;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerBrand {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.footerText {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+
+  .stepArrow {
+    transform: rotate(90deg);
+  }
+
+  .floatingElements {
+    display: none;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+  }
+}

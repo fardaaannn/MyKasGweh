@@ -1,0 +1,190 @@
+/* Local keyframes for CSS Modules scoping */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(10, 132, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(10, 132, 255, 0.4); }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 4px 0;
+}
+
+.connectorLine {
+  width: 2px;
+  height: 16px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+  opacity: 0.5;
+}
+
+.connectorArrow {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.block {
+  width: 100%;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  animation: fadeIn var(--duration-normal) var(--ease-out) forwards;
+  opacity: 0;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.block:hover {
+  border-color: var(--border-medium);
+  transform: scale(1.01);
+}
+
+.block.genesis {
+  border-color: rgba(10, 132, 255, 0.3);
+  background: rgba(10, 132, 255, 0.05);
+}
+
+.block.invalid {
+  border-color: rgba(255, 69, 58, 0.4);
+  background: rgba(255, 69, 58, 0.05);
+  animation: glow 2s infinite;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.blockNum {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.status {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusValid {
+  color: var(--accent-green);
+}
+
+.statusInvalid {
+  color: var(--accent-red);
+}
+
+.body {
+  padding: 16px 18px;
+}
+
+.genesisContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+
+.genesisIcon {
+  font-size: 28px;
+}
+
+.genesisText {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-blue);
+}
+
+.dataRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: right;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hashSection {
+  padding: 12px 18px;
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hashRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.hashLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hash {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.currentHash {
+  color: var(--accent-teal);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.timestamp {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.nonce {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: monospace;
+}

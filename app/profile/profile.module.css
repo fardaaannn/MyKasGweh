@@ -1,0 +1,291 @@
+/* Local keyframes for CSS Modules scoping */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.profileWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Profile Header */
+.profileHeader {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+
+.avatarLarge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--gradient-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  border: 3px solid rgba(10, 132, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(10, 132, 255, 0.2);
+}
+
+.avatarLarge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarLarge span {
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+}
+
+.profileName {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.profileEmail {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+/* Username Badge */
+.usernameBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--accent-blue);
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 8px;
+}
+
+.usernameBadge:hover {
+  background: rgba(10, 132, 255, 0.2);
+  border-color: rgba(10, 132, 255, 0.4);
+}
+
+.copyIcon {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.verifiedBadge {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--accent-green);
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.2);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Username Field */
+.usernameField {
+  display: flex;
+  flex-direction: column;
+}
+
+.usernameInputWrap {
+  display: flex;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0 12px;
+  transition: border-color 0.2s;
+}
+
+.usernameInputWrap:focus-within {
+  border-color: var(--accent-blue);
+}
+
+.usernameAt {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.usernameInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+}
+
+.usernameInput::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.usernameStatusIcon {
+  font-size: 16px;
+  margin-left: 8px;
+}
+
+.usernameHint {
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.status_checking { color: var(--text-muted); }
+.status_available { color: var(--accent-green); }
+.status_taken { color: var(--accent-red); }
+.status_invalid { color: var(--accent-orange); }
+
+/* Sections */
+.section {
+  padding: 24px;
+  animation: scaleIn 0.3s ease forwards;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Info Grid */
+.infoGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Edit Form */
+.editForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldNote {
+  font-size: 12px;
+  color: var(--accent-orange);
+  margin-top: 6px;
+}
+
+.formActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Alert Messages */
+.alert {
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.success {
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  color: var(--accent-green);
+}
+
+.error {
+  background: rgba(255, 69, 58, 0.1);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: var(--accent-red);
+}
+
+.info {
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.3);
+  color: var(--accent-blue);
+}
+
+/* Danger Zone */
+.dangerSection {
+  border-color: rgba(255, 69, 58, 0.2) !important;
+}
+
+.dangerText {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.dangerBtn {
+  background: rgba(255, 69, 58, 0.1);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: var(--accent-red);
+  font-weight: 600;
+}
+
+.dangerBtn:hover {
+  background: rgba(255, 69, 58, 0.2);
+  border-color: rgba(255, 69, 58, 0.5);
+}
+
+@media (max-width: 480px) {
+  .profileWrapper {
+    gap: 16px;
+  }
+
+  .section {
+    padding: 20px 16px;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+}

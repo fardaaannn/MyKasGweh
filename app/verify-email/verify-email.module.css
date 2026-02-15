@@ -1,0 +1,111 @@
+/* Local keyframes for CSS Modules scoping */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emailIcon {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 16px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.emailAddress {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.stepNum {
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.actions .btn {
+  width: 100%;
+}
+
+.success {
+  padding: 12px 16px;
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--accent-green);
+  font-size: 14px;
+  margin-bottom: 16px;
+  animation: fadeIn 0.3s ease forwards;
+  text-align: center;
+}
+
+.resendForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.resendLabel {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.spamNote {
+  padding: 12px 16px;
+  background: rgba(255, 159, 10, 0.08);
+  border: 1px solid rgba(255, 159, 10, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--accent-orange);
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.spamNote em {
+  color: var(--text-secondary);
+  font-style: normal;
+  font-family: monospace;
+  font-size: 12px;
+}

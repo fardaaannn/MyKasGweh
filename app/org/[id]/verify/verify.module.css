@@ -1,0 +1,115 @@
+/* Local keyframes for CSS Modules scoping */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(10, 132, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(10, 132, 255, 0.4); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  transition: opacity var(--duration-fast);
+}
+
+.backBtn:hover {
+  opacity: 0.7;
+}
+
+.verifySection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.verifyBtn {
+  min-width: 300px;
+  padding: 18px 36px;
+  font-size: 17px;
+  animation: glow 3s infinite;
+}
+
+.resultCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: var(--radius-md);
+  margin-bottom: 32px;
+  animation: scaleIn var(--duration-normal) var(--ease-spring) forwards;
+}
+
+.resultValid {
+  background: rgba(48, 209, 88, 0.1);
+  border: 1px solid rgba(48, 209, 88, 0.3);
+}
+
+.resultInvalid {
+  background: rgba(255, 69, 58, 0.1);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+}
+
+.resultIcon {
+  font-size: 48px;
+  flex-shrink: 0;
+}
+
+.resultText h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.resultValid .resultText h2 {
+  color: var(--accent-green);
+}
+
+.resultInvalid .resultText h2 {
+  color: var(--accent-red);
+}
+
+.resultText p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.chainSection {
+  margin-top: 16px;
+}
+
+.chainTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.chainList {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .verifyBtn {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .resultCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,75 @@
+.chatPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-primary);
+}
+
+.chatHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: var(--radius-xs);
+  transition: background var(--duration-fast);
+}
+
+.backBtn:hover {
+  background: rgba(10, 132, 255, 0.1);
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.headerSubtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.chatBody {
+  flex: 1;
+  overflow: hidden;
+  padding-bottom: var(--bottom-nav-height);
+}
+
+/* Make ChatPanel fill its container */
+.chatBody > div {
+  height: 100% !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+@media (min-width: 769px) {
+  .chatPage {
+    padding-top: var(--navbar-height);
+  }
+
+  .chatBody {
+    padding-bottom: 0;
+  }
+}

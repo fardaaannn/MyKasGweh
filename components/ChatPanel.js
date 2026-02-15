@@ -32,6 +32,7 @@ export default function ChatPanel({ orgId, chatId, user, chatType = 'org' }) {
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
   const fileInputRef = useRef(null);
+  const inputRef = useRef(null);
 
   // Get base path for Firestore
   const getBasePath = () => {
@@ -175,6 +176,7 @@ export default function ChatPanel({ orgId, chatId, user, chatType = 'org' }) {
 
     setSending(false);
     setUploading(false);
+    inputRef.current?.focus();
   };
 
   // Pin message
@@ -535,7 +537,7 @@ export default function ChatPanel({ orgId, chatId, user, chatType = 'org' }) {
           onChange={(e) => setNewMessage(e.target.value)}
           onKeyDown={handleKeyDown}
           disabled={sending}
-          autoComplete="off"
+          ref={inputRef}
         />
         <button
           type="submit"

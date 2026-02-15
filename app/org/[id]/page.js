@@ -13,6 +13,7 @@ import ProtectedRoute from '@/components/ProtectedRoute';
 import ProposalCard from '@/components/ProposalCard';
 import TransactionHistory from '@/components/TransactionHistory';
 import PaymentModal from '@/components/PaymentModal';
+import { getChatId } from '@/lib/friend-service';
 import styles from './org.module.css';
 
 export default function OrgPage() {
@@ -148,7 +149,7 @@ function OrgContent() {
           </div>
         </div>
 
-        {/* Bayar Iuran Button */}
+        {/* Action Buttons */}
         <div style={{ display: 'flex', gap: '8px', marginBottom: '4px' }}>
           <button
             className="btn btn-primary"
@@ -161,7 +162,14 @@ function OrgContent() {
             className="btn btn-primary btn-sm"
             onClick={() => router.push(`/org/${orgId}/proposals/new`)}
           >
-            ➕ Buat Proposal
+            ➕ Proposal
+          </button>
+          <button
+            className="btn btn-primary btn-sm"
+            style={{ background: 'var(--gradient-blue)' }}
+            onClick={() => router.push(`/org/${orgId}/chat`)}
+          >
+            💬 Chat
           </button>
         </div>
 
@@ -278,8 +286,18 @@ function OrgContent() {
                     <span className={styles.memberName}>{m.displayName || 'User'}</span>
                     <span className={styles.memberEmail}>{m.email}</span>
                   </div>
-                  {m.uid === user?.uid && (
+                  {m.uid === user?.uid ? (
                     <span className="badge badge-voting">Anda</span>
+                  ) : (
+                    <button
+                      className={styles.chatMemberBtn}
+                      onClick={() => {
+                        const chatId = getChatId(user.uid, m.uid);
+                        router.push(`/chat/${chatId}?friendUid=${m.uid}`);
+                      }}
+                    >
+                      💬
+                    </button>
                   )}
                 </div>
               ))}

@@ -172,7 +172,27 @@
   color: var(--text-muted);
 }
 
-/* Leave Organization */
+.chatMemberBtn {
+  background: rgba(10, 132, 255, 0.1);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  color: var(--accent-blue);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.chatMemberBtn:hover {
+  background: rgba(10, 132, 255, 0.2);
+  transform: scale(1.08);
+}
+
 .leaveSection {
   margin-top: 24px;
   padding: 20px;
